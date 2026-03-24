@@ -30,9 +30,7 @@ def today():
 def about():
     return render_template("mis2a.html")
 
-@app.route("/welcome")
-def welcome():
-    return render_template("welcome.html", name= "簡宏宥")
+
 
 @app.route("/welcome", methods=["GET"])
 def welcome():
@@ -40,7 +38,7 @@ def welcome():
     y = request.values.get("dep")
     return render_template("welcome.html", name = x,dep = y)
 
-    @app.route("/account", methods=["GET", "POST"])
+@app.route("/account", methods=["GET", "POST"])
 def account():
     if request.method == "POST":
         user = request.form["user"]
